@@ -28,7 +28,8 @@ public class Youtube {
         WebElement search=driver.findElement(By.xpath("//ytd-masthead/div[@id='container']/div[@id='center']/ytd-searchbox[@id='search']/button[@id='search-icon-legacy']/yt-icon[1]"));
         search.click();
 
-      // WebElement item=driver.findElement(By.xpath("//ytd-masthead/div[@id='container']/div[@id='center']/ytd-searchbox[@id='search']/button[@id='search-icon-legacy']/yt-icon[1]"));
+      // WebElement item=driver.findElement(By.xpath("//Iframe[@name='passive_signin']"));
+      // item.click();
         //item.click();
 
        // driver.close();
