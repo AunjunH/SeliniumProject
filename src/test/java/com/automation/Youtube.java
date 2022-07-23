@@ -23,10 +23,11 @@ public class Youtube {
         WebElement searchbutton=driver.findElement(By.xpath("//input[@id='search']"));
         searchbutton.sendKeys("Chirag khimani");
         searchbutton.click();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         WebElement search=driver.findElement(By.xpath("//ytd-masthead/div[@id='container']/div[@id='center']/ytd-searchbox[@id='search']/button[@id='search-icon-legacy']/yt-icon[1]"));
         search.click();
+        Thread.sleep(2000);
 
       // WebElement item=driver.findElement(By.xpath("//Iframe[@name='passive_signin']"));
       // item.click();
