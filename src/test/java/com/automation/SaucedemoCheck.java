@@ -31,63 +31,68 @@ public class SaucedemoCheck {
         WebElement login = driver.findElement(By.id("login-button"));
         login.click();
 
-        WebElement getProduct = driver.findElement(By.className("inventory_item_name"));
-        getProduct.click();
 
-        List<WebElement> productInfo = driver.findElements(By.id("inventory_item_container"));
+        Thread.sleep(2000);
+
+        WebElement addcart = driver.findElement(By.id("add-to-cart-sauce-labs-fleece-jacket"));
+        addcart.click();
+
+        Thread.sleep(2000);
+
+
+        WebElement cartList = driver.findElement(By.className("shopping_cart_badge"));
+        cartList.click();
+        Thread.sleep(1000);
+
+        WebElement checkout = driver.findElement(By.id("checkout"));
+        checkout.click();
+
+        Thread.sleep(1000);
+
+        // Checkout information
+        WebElement Firstname = driver.findElement(By.id("first-name"));
+
+        Firstname.sendKeys("Hosna");
+
+        Thread.sleep(1000);
+
+        WebElement Lastname = driver.findElement(By.id("last-name"));
+        Lastname.sendKeys("Aunjun");
+
+        Thread.sleep(1000);
+
+        WebElement zipcode = driver.findElement(By.id("postal-code"));
+        zipcode.sendKeys("12345");
+
+        Thread.sleep(1000);
+
+        WebElement Continue = driver.findElement(By.id("continue"));
+        Continue.click();
+
+        // System.out.println("*** Payment and price information ***");
+        //WebElement elements=driver.findElement(By.xpath("//div[@class='inventory_item_name']"));
+
+
+        Thread.sleep(2000);
+
+
+        System.out.println("*** Payment and price information ***");
+
+
+        List<WebElement> productInfo = driver.findElements(By.xpath("//div[contains(@class, 'inventory_item') and not(contains(@class, 'inventory_item_desc'))]"));
         for (WebElement element : productInfo) {
             System.out.println(element.getText());
-
-
-            Thread.sleep(2000);
-
-            WebElement addcart = driver.findElement(By.id("add-to-cart-sauce-labs-fleece-jacket"));
-            addcart.click();
-
-            Thread.sleep(2000);
-
-
-            WebElement cartList = driver.findElement(By.className("shopping_cart_link"));
-            cartList.click();
-            Thread.sleep(1000);
-
-            WebElement checkout = driver.findElement(By.id("checkout"));
-            checkout.click();
-
-            Thread.sleep(1000);
-
-            // Checkout information
-            WebElement Firstname = driver.findElement(By.id("first-name"));
-
-            Firstname.sendKeys("Hosna");
-
-            Thread.sleep(1000);
-
-            WebElement Lastname = driver.findElement(By.id("last-name"));
-            Lastname.sendKeys("Aunjun");
-
-            Thread.sleep(1000);
-
-            WebElement zipcode = driver.findElement(By.id("postal-code"));
-            zipcode.sendKeys("12345");
-
-            Thread.sleep(1000);
-
-            WebElement Continue = driver.findElement(By.id("continue"));
-            Continue.click();
-
-            // System.out.println("*** Payment and price information ***");
-            //WebElement elements=driver.findElement(By.xpath("//div[@class='inventory_item_name']"));
-
-
-            Thread.sleep(2000);
-
-
-
+        }
+        List<WebElement>information=driver.findElements(By.xpath("//div[@class='summary_value_label']"));
+        for(WebElement element:information) {
+            System.out.println(element.getText());
         }
 
-        driver.close();
-
+           // List<WebElement> elements=driver.findElements(By.xpath("summary_subtotal_label"));
+           // for(WebElement element:elements)
+        }
+        //driver.quit();
     }
-}
+
+
 

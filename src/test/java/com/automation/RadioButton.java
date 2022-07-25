@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class RadioButton {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options=new ChromeOptions();
         options.setBinary("C:\\Program Files\\Google\\Chrome Beta\\Application\\chrome.exe");
@@ -19,13 +19,17 @@ public class RadioButton {
         driver.manage().deleteAllCookies();
 
         driver.get("https://www.ebay.com/sch/ebayadvsearch");
+        Thread.sleep(1000);
 
         WebElement locatedRadioBtn = driver.findElement(By.id("LH_Located"));
         System.out.println(locatedRadioBtn.isSelected());
+        Thread.sleep(2000);
 
         locatedRadioBtn.click();
+        Thread.sleep(1000);
 
         System.out.println(locatedRadioBtn.isSelected());
+        Thread.sleep(2000);
 
         driver.quit();
 
